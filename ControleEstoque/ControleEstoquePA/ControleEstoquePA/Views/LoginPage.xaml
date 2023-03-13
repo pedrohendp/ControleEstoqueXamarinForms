@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ControleEstoquePA.Views.LoginPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:Custom="http://xamarin.com/schemas/2020/toolkit"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Shell.NavBarIsVisible="False"
+    mc:Ignorable="d">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="{Type Label}">
+                <Setter Property="TextColor" Value="Black" />
+            </Style>
+            <Style x:Key="GridBorderStyle" TargetType="{Type BoxView}">
+                <Setter Property="Color" Value="Blue" />
+                <Setter Property="BackgroundColor" Value="Red" />
+                <Setter Property="HeightRequest" Value="1" />
+            </Style>
+            <Color x:Key="Accent">#96d1ff</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <StackLayout Padding="10,0,10,0" VerticalOptions="Center">
+        <Grid IsEnabled="True">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="10" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="10" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Entry
+                Grid.Row="0"
+                Grid.Column="1"
+                HorizontalOptions="FillAndExpand"
+                HorizontalTextAlignment="Center"
+                Placeholder="Digite seu nome de usuário" />
+            <BoxView
+                Grid.Row="1"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                HeightRequest="10" />
+
+            <Entry
+                Grid.Row="2"
+                Grid.Column="1"
+                HorizontalOptions="FillAndExpand"
+                HorizontalTextAlignment="Center"
+                IsPassword="True"
+                Placeholder="Digite sua senha" />
+            <BoxView
+                Grid.Row="3"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                HeightRequest="10" />
+
+            <Button
+                Grid.Row="4"
+                Grid.ColumnSpan="2"
+                Command="{Binding LoginCommand}"
+                Text="Login">
+                <Button.Effects>
+                    <Custom:ShadowEffect />
+                </Button.Effects>
+            </Button>
+
+            <Label
+                Grid.Row="5"
+                Grid.ColumnSpan="2"
+                Margin="0,10,0,0"
+                FontSize="Small"
+                HorizontalTextAlignment="Center"
+                Text="Não tem uma conta? Registre-se aqui"
+                TextColor="Gray"
+                VerticalTextAlignment="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding RegisterCommand}" Tapped="OnRegisterLabel_Tapped" />
+                </Label.GestureRecognizers>
+            </Label>
+        </Grid>
+
+        <StackLayout
+            BackgroundColor="{StaticResource Accent}"
+            HorizontalOptions="Fill"
+            VerticalOptions="FillAndExpand">
+            <StackLayout
+                HorizontalOptions="Center"
+                Orientation="Horizontal"
+                VerticalOptions="Center">
+                <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
+                    <Image
+                        HeightRequest="64"
+                        Source="controle-estoque-login-page.jpg"
+                        VerticalOptions="Center" />
+                </ContentView>
+            </StackLayout>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

@@ -83,3 +83,60 @@ lint/generated/
 lint/outputs/
 lint/tmp/
 # lint/reports/
+
+
+# Arquivos gerados pelo Visual Studio
+bin/
+obj/
+.vs/
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.ide
+*.ncrunch*
+*Resharper*
+*TestResult.xml
+*.xnb
+
+# Arquivos de configuração do Visual Studio
+*.csproj.user
+*.sln.ide
+
+# Arquivos de compilação e nuget packages
+*.dll
+*.exe
+*.log
+*.apk
+*.ipa
+packages/
+*.nupkg
+*.paket.restore.json
+*.paket.targets
+
+# Arquivos gerados pelo Xamarin
+ios/obj/
+ios/bin/
+ios/build/
+*.ipa
+*.app
+*.dSYM.zip
+
+android/obj/
+android/bin/
+*.apk
+*.aab
+*.keystore
+*.pfx
+*.keyset
+*.hprof
+
+# Arquivos gerados pelo Windows
+Windows/*/bin/
+Windows/*/obj/
+*.msvc*
+*.vcx*
+*.sdf
+*.sln.docstates
+*.vc.db
+
